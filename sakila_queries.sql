@@ -40,7 +40,7 @@ WHERE first_name = 'SCARLETT';
 SELECT title, length 
 FROM film
 WHERE title LIKE '%ARMAGEDDON%'
- AND length > 100;
+AND length > 100;
 
 SELECT COUNT(*) AS behind_the_scenes 
 FROM film
