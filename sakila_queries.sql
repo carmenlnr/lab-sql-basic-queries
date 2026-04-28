@@ -18,16 +18,14 @@ ORDER BY release_year;
 
 SELECT COUNT(store_id) AS number_of_stores 
 FROM store;
-
 SELECT COUNT(staff_id) AS number_of_employees 
 FROM staff;
 
-SELECT COUNT(film_id) AS films_available 
+SELECT COUNT(DISTINCT film_id) AS films_available 
 FROM film;
 
-SELECT COUNT(DISTINCT film_id) AS films_rented 
-FROM inventory
-WHERE inventory_id IN (SELECT inventory_id FROM rental);
+SELECT COUNT(DISTINCT inventory_id) AS films_rented 
+FROM rental;
 
 SELECT COUNT(DISTINCT last_name) AS distinct_last_names FROM actor;
 
