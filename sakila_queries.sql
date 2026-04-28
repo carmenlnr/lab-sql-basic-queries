@@ -25,8 +25,9 @@ FROM staff;
 SELECT COUNT(film_id) AS films_available 
 FROM film;
 
-SELECT COUNT(rental_id) AS films_rented 
-FROM rental;
+SELECT COUNT(DISTINCT film_id) AS films_rented 
+FROM inventory
+WHERE inventory_id IN (SELECT inventory_id FROM rental);
 
 SELECT COUNT(DISTINCT last_name) AS distinct_last_names FROM actor;
 
